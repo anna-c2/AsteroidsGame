@@ -7,5 +7,11 @@ class Spaceship extends Floater
     yCorners = new int[]{-40,0,40,0};
     myColor = color(255);
   }
- 
+ public void hyperspace(){
+   rocket.setXspeed(0);
+   rocket.setYspeed(0);
+   rocket.setCenterY((int)(Math.random()*500));
+   rocket.setCenterX((int)(Math.random()*500));
+   rocket.setPointDirection((int)(Math.random()*360));
+ }
 }
