@@ -27,6 +27,9 @@ public void draw()
     if(key == 'w' || key == 'W'){
       rocket.accelerate(0.1);
     }
+    if(key == 'h' || key == 'H'){
+      rocket.hyperspace();
+    }
   }
   rocket.move();
   rocket.show();
