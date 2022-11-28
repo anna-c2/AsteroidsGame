@@ -1,5 +1,5 @@
 class Stars{
-  public int myX, myY, mySize, myColor;
+  private int myX, myY, mySize, myColor;
  
   Stars(){
     myX = (int)(Math.random()*700);
