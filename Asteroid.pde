@@ -19,11 +19,11 @@ class Asteroid extends Floater{
     super.move();
   }
   
-  public double getXCenter() {
+  public double getX() {
     return myCenterX;
   }
 
-  public double getYCenter() {
+  public double getY() {
     return myCenterY;
   }
 
