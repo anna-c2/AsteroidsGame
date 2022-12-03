@@ -48,6 +48,5 @@ public void draw()
     
   rocket.move();
   rocket.show();
-}
-
+  
 }
