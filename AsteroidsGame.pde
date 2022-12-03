@@ -1,6 +1,6 @@
 //your variable declarations here
 Spaceship rocket = new Spaceship();
-ArrayList <Asteroid> rock = new ArrayList <Asteroid> ();
+//ArrayList <Asteroid> rock = new ArrayList <Asteroid> ();
 Stars[] sky = new Stars[500];
 
 public void setup() 
@@ -11,9 +11,9 @@ public void setup()
     sky[i] = new Stars();
   }
   
-  for(int i = 0; i <= 10 ; i++){
-    rock.add(new Asteroid());
-  }
+  //for(int i = 0; i <= 10 ; i++){
+  //  rock.add(new Asteroid());
+ // }
   
 }
 public void draw() 
@@ -24,16 +24,16 @@ public void draw()
     sky[i].show();
   }
   
-  for(int i = 0; i < rock.size(); i++){
+ /* for(int i = 0; i < rock.size(); i++){
     rock.get(i).move();
     rock.get(i).show();
     float d = dist((float)rocket.getX(), (float)rocket.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
     if(d < 20){
       rock.remove(i);
     }
-  }
+  }*/
   
-  if(key == 'a' || key == 'A'){
+   if(key == 'a' || key == 'A'){
      rocket.turn(-10);
     }
     if(key == 'd' || key == 'D'){
