@@ -1,11 +1,8 @@
 //your variable declarations here
+Stars[] sky = new Stars[500];
 Spaceship rocket = new Spaceship();
 ArrayList <Asteroid> rock = new ArrayList <Asteroid> ();
-Stars[] sky = new Stars[500];
-boolean aPressed = false;
-boolean wPressed = false;
-boolean dPressed = false;
-boolean hPressed = false;
+Bullet boom = new Bullet(rocket);
 
 public void setup() 
 {
@@ -32,54 +29,27 @@ public void draw()
     rock.get(i).move();
     rock.get(i).show();
     float d = dist((float)rocket.getX(), (float)rocket.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
-    if(d < 20){
+    if(d < 15){
       rock.remove(i);
     }
   }
   
-  if(aPressed == true){
-    rocket.turn(-10);
+  if(keyPressed){
+    if(key == 'a' || key == 'A'){
+      rocket.turn(-10);
+    }
+    if(key == 'd' || key == 'D'){
+      rocket.turn(10);
+    }
+    if(key == 'w' || key == 'W'){
+      rocket.accelerate(0.1);
+    }
+    if(key == 'h' || key == 'H'){
+      rocket.hyperspace();
+    }
   }
-  if(wPressed == true){
-    rocket.accelerate(0.1);
-  }
-  if(dPressed == true){
-    rocket.turn(10);
-  }
-  if(hPressed == true){
-    rocket.hyperspace();
-  }
-    
   rocket.move();
   rocket.show();
-}
-
-public void keyPressed(){
-  if(key == 'a' || key == 'A'){
-      aPressed = true;
-    }
-    if(key == 'd' || key == 'D'){
-      dPressed = true;
-    }
-    if(key == 'w' || key == 'W'){
-      wPressed = true;
-    }
-    if(key == 'h' || key == 'H'){
-      hPressed = true;
-    }
-}
-
-public void keyReleased(){
-  if(key == 'a' || key == 'A'){
-      aPressed = false;
-    }
-    if(key == 'd' || key == 'D'){
-      dPressed = false;
-    }
-    if(key == 'w' || key == 'W'){
-      wPressed = false;
-    }
-    if(key == 'h' || key == 'H'){
-      hPressed = false;
-    }
+  boom.show();
+  boom.move();
 }
