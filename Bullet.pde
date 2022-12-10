@@ -8,7 +8,11 @@ class Bullet extends Floater{
     accelerate(6.0);
   }
   public void show(){
-    ellipse((float)getX(), (float)getY(), 10,10);
+    ellipse((float)getX(), (float)getY(), 5,5);
+  }
+  public void move(){
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed;
   }
   public double getX(){
     return myCenterX;
@@ -16,4 +20,5 @@ class Bullet extends Floater{
   public double getY(){
     return myCenterY;
   }
+  
 }
